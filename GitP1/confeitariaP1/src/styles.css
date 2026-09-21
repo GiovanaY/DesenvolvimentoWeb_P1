@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=PT+Serif+Caption:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, font-weight 0.2s ease;
+}
+.logo {
+    font-size: 35px;
+    font-family: "Alex Brush", cursive;
+    color: black;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: rgb(252, 217, 223);
+    height: 3vh;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+    font-family: "PT Serif Caption", cursive;
+    height: 1vh;
+}
+.nav-list li{
+    margin-left: 32px;
+}
+.nav-list li a:hover {
+    transform: translateY(-8px) scale(1.2);
+    font-weight: bold;
+}
+
+.site-footer {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.info-card h3 {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 15px 0 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.info-card p {
+  font-size: 0.85rem;
+  color: #b0b0b0;
+  margin: 4px 0;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #e8b4b8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.icon-circle svg {
+  width: 24px;
+  height: 24px;
+  stroke: black; 
+}

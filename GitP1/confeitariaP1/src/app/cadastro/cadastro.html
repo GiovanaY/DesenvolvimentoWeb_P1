@@ -1,0 +1,32 @@
+<div class="janela-cadastro">
+  <h3>Faça seu Cadastro</h3>
+  <div class="alert alert-success">Cadastro atualizado</div>
+
+  <form class="needs-validation" id="formCadastro" novalidate
+        (ngSubmit)="onSubmit(formCadastroRef)" #formCadastroRef>
+
+    <label class="form-label" for="txtNome">Nome:</label>
+    <input type="text" id="txtNome" class="form-control" required>
+    <div class="invalid-feedback">Nome é obrigatório!</div>
+
+    <label class="form-label" for="txtEmail">E-mail:</label>
+    <input type="email" id="txtEmail" class="form-control" required>
+    <div class="invalid-feedback">email é obrigatório!</div>
+
+    <label class="form-label" for="txtSenha">Senha:</label>
+    <input type="password" id="txtSenha" class="form-control" required
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+    <div class="invalid-feedback">A senha deve conter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial (@$!%*?&).</div>
+
+    <label class="form-label" for="txtTelefone">Telefone:</label>
+    <input type="text" id="txtTelefone" class="form-control" required
+        pattern="[0-9]{4,5}-[0-9]{4}">
+    <div class="invalid-feedback">Informe um telefone válido!</div>
+
+    <button type="submit" class="btn btn-success w-100">Criar</button>
+
+    <p class="ja-tenho-conta">
+        <a href="login">Já tenho uma conta</a>
+    </p>
+  </form>
+</div>

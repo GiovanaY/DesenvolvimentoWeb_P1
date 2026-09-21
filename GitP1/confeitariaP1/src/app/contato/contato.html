@@ -1,0 +1,26 @@
+<div class="janela-contato">
+  <h3>Fale conosco</h3>
+
+  <div class="alert alert-danger">
+    <strong>Verifique!</strong> Nome ou e-mail inválidos.
+  </div>
+
+  <form class="needs-validation" id="formContato" novalidate
+        (ngSubmit)="onSubmit(formContatoRef)" #formContatoRef>
+    
+    <label class="form-label" for="txtNome">Nome:</label>
+    <input type="text" id="txtNome" class="form-control" required>
+    <div class="invalid-feedback">Escreva seu nome inteiro</div>
+
+    <label class="form-label" for="txtEmail">E-mail:</label>
+    <input type="email" id="txtEmail" class="form-control" required>
+    <div class="invalid-feedback">Escreva se e-mail</div>
+
+    <label class="form-label" for="txtMensagem">Mensagem:</label>
+    <textarea id="txtMensagem" class="form-control" required rows="5"></textarea>
+    <div class="invalid-feedback">Escreva a sua mensagem</div>
+
+    <button type="submit" class="btn btn-success w-100">Mandar mensagem</button>
+
+  </form>
+</div>

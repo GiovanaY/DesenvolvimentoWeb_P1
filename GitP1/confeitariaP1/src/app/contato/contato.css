@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+.janela-contato {
+  max-width: 420px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(236, 110, 160, 0.25);
+  padding: 28px 32px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.janela-contato h3 {
+  font-family: "Playfair Display", cursive;
+  color: #ec6ea0;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.janela-contato .form-label {
+  color: #8a3f5c;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.janela-contato .form-control {
+  border: 1px solid #f0c4d6;
+  border-radius: 10px;
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.janela-contato .form-control:focus {
+  outline: none;
+  border-color: #ec6ea0;
+  box-shadow: 0 0 0 3px rgba(236, 110, 160, 0.2);
+}
+
+.janela-contato .alert-danger {
+  background: #fdeaea;
+  border: 1px solid #f1b8b8;
+  color: #a33a3a;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+}
+
+.janela-contato .invalid-feedback {
+  color: #d1477a;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.janela-contato button.btn-success {
+  margin-top: 24px;
+  background: linear-gradient(90deg, #ec6ea0, #f18cb3);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.janela-contato button.btn-success:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,30 @@
+<div class="janela-cadastro">
+  <h3>Faça seu Login</h3>
+  <div class="alert alert-danger">
+    <strong>Verifique!</strong> E-mail ou senha inválidos.
+  </div>
+
+  <form class="needs-validation" id="formLogin" novalidate
+        (ngSubmit)="onSubmit(formLoginRef)" #formLoginRef>
+
+    <label class="form-label" for="txtEmail">E-mail:</label>
+    <input type="email" id="txtEmail" class="form-control" required>
+    <div class="invalid-feedback">Coloque seu email!</div>
+
+    <label class="form-label" for="txtSenha">Senha:</label>
+    <input type="password" id="txtSenha" class="form-control" required
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+    <div class="invalid-feedback">Coloque sua senha!</div>
+
+    <button type="submit" class="btn btn-success w-100">Entrar</button>
+
+    <p class="esqueci-minha-senha">
+      <a href="reenvio-senha">Esqueci minha senha</a>
+    </p>
+
+    <p class="nao-tenho-conta">
+      <a href="cadastro">Não tenho uma conta</a>
+    </p>
+
+  </form>
+</div>
