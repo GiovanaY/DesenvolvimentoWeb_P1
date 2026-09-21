@@ -214,8 +214,67 @@
   margin: 0;
   font-weight: 600;
 }
-
 /*Terceira Seção*/
+.banner-desconto {
+  background-color: #fdf0f2; /* Fundo rosa claro pastel */
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.container-desconto {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tag-subtitulo {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.banner-desconto h2 {
+  font-size: 36px;
+  color: #222;
+  margin: 15px 0;
+  font-family: 'Playfair Display', serif; /* Ou outra fonte elegante */
+}
+
+.banner-desconto p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.botoes-grupo {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-primario {
+  background-color: #f3a8b4;
+  color: #fff;
+  border: 1px solid #f3a8b4;
+}
+
+.btn-primario:hover {
+  background-color: #e593a0;
+}
+/*Quarta Seção*/
 .reviews-section {
   background-color: #faf8f5;
   padding: 80px 20px;

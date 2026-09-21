@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=PT+Serif+Caption:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 .janela-cadastro {
   max-width: 420px;
   margin: 48px auto;
@@ -10,7 +10,7 @@
 }
 
 .janela-cadastro h3 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "PT Serif Caption", cursive;
   color: #ec6ea0;
   font-size: 2rem;
   text-align: center;
@@ -59,7 +59,7 @@
 
 .janela-cadastro button.btn-success {
   margin-top: 24px;
-  background: linear-gradient(90deg, #ec6ea0, #f18cb3);
+  background-color: #f3a8b4;
   border: none;
   border-radius: 10px;
   padding: 12px;
@@ -77,11 +77,11 @@
   text-align: center;
   margin-top: 16px;
   font-size: 0.85rem;
-  color: #8a3f5c;
+  color: #f3a8b4;
 }
 
 .ja-tenho-conta a {
-  color: #ec6ea0;
+  color: #f08a9b;
   font-weight: 600;
   text-decoration: none;
 }

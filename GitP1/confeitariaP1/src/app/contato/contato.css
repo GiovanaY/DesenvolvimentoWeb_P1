@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=PT+Serif+Caption:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 .janela-contato {
   max-width: 420px;
   margin: 48px auto;
@@ -10,7 +10,7 @@
 }
 
 .janela-contato h3 {
-  font-family: "Playfair Display", cursive;
+  font-family: "PT Serif Caption", cursive;
   color: #ec6ea0;
   font-size: 2rem;
   text-align: center;
@@ -59,7 +59,7 @@
 
 .janela-contato button.btn-success {
   margin-top: 24px;
-  background: linear-gradient(90deg, #ec6ea0, #f18cb3);
+  background-color: #f3a8b4;
   border: none;
   border-radius: 10px;
   padding: 12px;
