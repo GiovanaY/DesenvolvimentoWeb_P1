@@ -4,6 +4,29 @@
     margin: 0;
     padding: 0;
 }
+
+.icon-cesta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(-1px);
+  transition: transform 0.3s ease;
+}
+
+.icon-cesta:hover {
+  transform: translateY(-8px) scale(1.1);
+}
+
+.icon-cesta .preview-icon {
+  stroke: #eac18e !important;
+  transition: stroke 0.3s ease;
+}
+
+.icon-cesta:hover .preview-icon {
+  stroke: #bf945f !important;
+}
+
 a {
     color: black;
     text-decoration: none;

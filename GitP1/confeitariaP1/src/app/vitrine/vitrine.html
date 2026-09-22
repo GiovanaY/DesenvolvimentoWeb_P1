@@ -1,7 +1,12 @@
 <div class="container my-4">
-  <!-- Campo de Pesquisa -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-md-6">
+  <!-- Pesquisa de Busca -->
+  <div class="row justify-content-end mb-4">
+    
+    <div class="col-md-6 text-start">
+      <h2 class="catalogo-titulo">Catálogo</h2>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content-end mt-3 mt-md-0">
       <div class="search-box">
         <i class="bi bi-search search-icon"></i>
         <input 
@@ -22,7 +27,7 @@
     </div>
   </div>
 
-  <!-- Grid de Produtos -->
+  <!-- Produtos -->
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let obj of produtosFiltrados">
       <div class="card h-100">
@@ -49,7 +54,7 @@
 
           <!-- Botão Comprar com as suas classes CSS -->
           <div class="btn-buy">
-            <button class="btn-buy-btn" type="button">Comprar</button>
+            <a href="detalhe" class="btn-buy-btn" type="button">Comprar</a>
           </div>
         </div>
       </div>

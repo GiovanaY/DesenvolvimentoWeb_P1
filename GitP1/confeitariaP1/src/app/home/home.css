@@ -5,7 +5,7 @@
     min-height: 400px;
     width: 100%;
     
-    background-image: url(/home1.jpg);
+    background-image: url(/home11.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -228,7 +228,7 @@
 .tag-subtitulo {
   font-size: 14px;
   letter-spacing: 2px;
-  color: #854b27;
+  color: #bf945f;
   text-transform: uppercase;
   font-weight: 600;
   text-shadow: 0 6px 16px rgba(184, 110, 75, 0.25);
