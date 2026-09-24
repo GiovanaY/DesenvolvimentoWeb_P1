@@ -1,33 +1,52 @@
 <div class="janela-cadastro">
-  <h3>Faça seu Login</h3>
-  <div class="alert alert-danger">
-    <strong>Verifique!</strong> E-mail ou senha inválidos.
+  <div class="painel-imagem">
+    <img src="/login.jpg" alt="Confeitaria da Web" />
   </div>
 
-  <form class="needs-validation" id="formLogin" novalidate
-        (ngSubmit)="onSubmit(formLoginRef)" #formLoginRef>
+  <div class="painel-form">
 
-    <label class="form-label" for="txtEmail">E-mail:</label>
-    <input type="email" id="txtEmail" class="form-control" required>
-    <div class="invalid-feedback">Coloque seu email!</div>
+    <img src="/logo.png" class="logo">
 
-    <label class="form-label" for="txtSenha">Senha:</label>
-    <input type="password" id="txtSenha" class="form-control" required
-        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
-    <div class="invalid-feedback">Coloque sua senha!</div>
+    <h3>Faça seu Login</h3>
 
-    <button type="submit" class="btn btn-success w-100">Entrar</button>
+    <form class="needs-validation" id="formLogin" novalidate
+          (ngSubmit)="onSubmit(formLoginRef)" #formLoginRef>
 
-    <p class="esqueci-minha-senha">
-      <a href="reenvio-senha">Esqueci minha senha</a>
-    </p>
+      <label class="form-label" for="txtEmail">E-mail:</label>
+      <div class="input-icon-box">
+        <i class="bi bi-envelope input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail preview-icon">
+            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+          </svg>
+        </i>
+        <input type="email" id="txtEmail" class="form-control com-icone" required>
+      </div>
+      <div class="invalid-feedback">Coloque seu email!</div>
 
-    <p class="nao-tenho-conta">
-      <a href="cadastro">Não tenho uma conta</a>
-    </p>
+      <label class="form-label" for="txtSenha">Senha:</label>
+      <div class="input-icon-box">
+        <i class="bi bi-lock input-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock preview-icon">
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </i>
+        <input type="password" id="txtSenha" class="form-control com-icone" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+      </div>
+      <div class="invalid-feedback">Coloque sua senha!</div>
 
-  </form>
-  <div class="img-login">
-    
+      <button type="submit" class="btn btn-success w-100">Entrar</button>
+
+      <p class="esqueci-minha-senha">
+        <a routerLink="/reenvio-senha">Esqueci minha senha</a>
+      </p>
+
+      <p class="nao-tenho-conta">
+        <a routerLink="/cadastro">Não tenho uma conta</a>
+      </p>
+
+    </form>
   </div>
 </div>

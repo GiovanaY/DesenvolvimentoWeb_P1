@@ -1,1 +1,72 @@
-<p>cesta works!</p>
+<main class="pagina-carrinho">
+  <h1 class="titulo-pagina">Sua cesta</h1>
+
+  <!-- Estado vazio -->
+  <section class="carrinho-vazio" *ngIf="cesta.vazia()">
+    <p class="vazio-texto">Sua cesta ainda não tem nenhum doce.</p>
+    <a href="vitrine" class="btn-dourado">Ver catálogo</a>
+  </section>
+
+  <!-- Carrinho com itens -->
+  <div class="carrinho-conteudo" *ngIf="!cesta.vazia()">
+    <section class="lista-itens">
+      <article class="item-carrinho" *ngFor="let item of cesta.itens">
+        <img
+          class="item-imagem"
+          [src]="item.produto.codigo + '.jpg'"
+          [alt]="item.produto.nome"
+        />
+
+        <div class="item-info">
+          <h2 class="item-nome">{{ item.produto.nome }}</h2>
+
+          <div class="item-preco">
+            <span class="preco-riscado" *ngIf="item.produto.valorPromo">
+              R$ {{ item.produto.valor.toFixed(2) }}
+            </span>
+            <span class="preco-atual">
+              R$ {{ (item.produto.valorPromo ?? item.produto.valor).toFixed(2) }}
+            </span>
+          </div>
+        </div>
+
+        <div class="item-controles">
+          <div class="controle-quantidade">
+            <button class="btn-qtd" (click)="cesta.diminuir(item)" aria-label="Diminuir quantidade">−</button>
+            <span class="quantidade-valor">{{ item.quantidade }}</span>
+            <button class="btn-qtd" (click)="cesta.aumentar(item)" aria-label="Aumentar quantidade">+</button>
+          </div>
+
+          <span class="item-subtotal">R$ {{ cesta.subtotal(item).toFixed(2) }}</span>
+
+          <button class="btn-remover" (click)="cesta.remover(item)" aria-label="Remover item">
+            Remover
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="resumo-pedido">
+      <h2 class="resumo-titulo">Resumo do pedido</h2>
+
+      <div class="resumo-linha">
+        <span>Itens ({{ cesta.quantidadeTotal() }})</span>
+        <span>R$ {{ cesta.total().toFixed(2) }}</span>
+      </div>
+    
+      <div class="resumo-linha">
+        <span>Frete</span>
+        <span *ngIf="cesta.frete > 0">R$ {{ cesta.frete.toFixed(2) }}</span>
+        <span *ngIf="cesta.frete === 0" class="frete-gratis">Grátis</span>
+      </div>
+
+      <div class="resumo-linha resumo-total">
+        <span>Total</span>
+        <span>R$ {{ (cesta.total() + cesta.frete).toFixed(2) }}</span>
+      </div>
+
+      <a class="btn-finalizar" href="finalizar-compra">Finalizar compra</a>
+      <a class="link-continuar" href="vitrine">Continuar comprando</a>
+    </aside>
+  </div>
+</main>

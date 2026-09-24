@@ -1,6 +1,11 @@
 import { ItemCesta } from './item-cesta';
+import { PRODUTOS } from '../model/lista-produtos';
 import { Produto } from './produto';
-import { Vitrine } from '../vitrine/vitrine';
+
+interface ItemSalvo {
+  codigo: number;
+  quantidade: number;
+}
 
 export class Cesta {
   itens: ItemCesta[] = [];
@@ -10,32 +15,43 @@ export class Cesta {
   }
 
   carregar(): void {
-    let salvos = JSON.parse(localStorage.getItem('cesta') || '[]');
-    for (let s of salvos) {
-      for (let p of Vitrine) {
-        if (p.codigo == s.codigo) {
-          let item = new ItemCesta();
-          item.produto = p;
-          item.quantidade = s.quantidade;
-          this.itens.push(item);
-        }
+    let salvos: ItemSalvo[] = [];
+    try {
+      salvos = JSON.parse(localStorage.getItem('cesta') || '[]');
+    } catch {
+      salvos = [];
+    }
+
+    const catalogo = new Map(PRODUTOS.map(p => [p.codigo, p]));
+
+    for (const s of salvos) {
+      const produto = catalogo.get(s.codigo);
+      if (produto) {
+        const item = new ItemCesta();
+        item.produto = produto;
+        item.quantidade = s.quantidade;
+        this.itens.push(item);
       }
     }
   }
 
   salvar(): void {
-    let dados: any[] = [];
-    for (let item of this.itens) {
-      dados.push({ codigo: item.produto.codigo, quantidade: item.quantidade });
+    const dados: ItemSalvo[] = this.itens.map(item => ({
+      codigo: item.produto.codigo,
+      quantidade: item.quantidade,
+    }));
+    try {
+      localStorage.setItem('cesta', JSON.stringify(dados));
+    } catch {
+      // localStorage indisponível (modo privado, quota cheia etc.)
     }
-    localStorage.setItem('cesta', JSON.stringify(dados));
   }
 
   adicionar(produto: Produto, quantidade: number = 1): void {
     const existente = this.itens.find(i => i.produto.codigo === produto.codigo);
 
     if (existente) {
-      existente.quantidade = existente.quantidade + quantidade;
+      existente.quantidade += quantidade;
     } else {
       const novo = new ItemCesta();
       novo.produto = produto;
@@ -73,7 +89,8 @@ export class Cesta {
   }
 
   subtotal(item: ItemCesta): number {
-    return item.produto.valorPromo * item.quantidade;
+    const preco = item.produto.valorPromo ?? item.produto.valor;
+    return preco * item.quantidade;
   }
 
   total(): number {
@@ -86,5 +103,10 @@ export class Cesta {
 
   vazia(): boolean {
     return this.itens.length === 0;
+  }
+
+  get frete(): number {
+    if (this.total() >= 80) return 0;
+    return 12.00;
   }
 }

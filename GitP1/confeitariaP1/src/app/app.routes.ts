@@ -7,11 +7,12 @@ import { Home } from './home/home';
 import { Contato } from './contato/contato';
 import { Detalhe } from './detalhe/detalhe';
 import { Cesta } from './cesta/cesta';
+import { FinalizarCompra } from './finalizar-compra/finalizar-compra';
 
 export const routes: Routes = [
     {path: "vitrine", component:Vitrine}, {path: "login", component:Login},
     {path: "cadastro", component:Cadastro}, {path: "reenvio-senha", component:ReenvioSenha},
     {path: "home", component:Home}, {path: "contato", component:Contato},
-    {path: "detalhe", component:Detalhe}, {path: "cesta", component:Cesta},
-    {path:"", component:Home}
+    {path: "detalhe/:codigo", component:Detalhe}, {path: "cesta", component:Cesta},
+    {path: "finalizar-compra", component:FinalizarCompra}, {path:"", component:Home}
 ];

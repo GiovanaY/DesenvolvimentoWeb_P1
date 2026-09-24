@@ -6,4 +6,6 @@ export class Produto {
   valorPromo?: number;
   quantidade!: number;
   destaque!: number;
+  semGluten?: boolean;
+  semLactose?: boolean;
 }

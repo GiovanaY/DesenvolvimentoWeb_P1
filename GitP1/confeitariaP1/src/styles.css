@@ -34,15 +34,21 @@ a {
     transition: transform 0.3s ease, font-weight 0.2s ease;
 }
 .logo {
-    font-size: 35px;
-    font-family: "Alex Brush", cursive;
-    color: black;
+  display: flex;
+  align-items: center
 }
+
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px;
+    padding: 50px;
     background-color: rgb(252, 217, 223);
     height: 3vh;
 }
@@ -109,4 +115,84 @@ nav {
   width: 24px;
   height: 24px;
   stroke: black; 
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: black;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* animação: vira um "X" quando aberto */
+.menu-toggle.ativo span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+.menu-toggle.ativo span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.ativo span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+@media (max-width: 720px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(252, 217, 223);
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;
+  }
+
+  .nav-list.aberto {
+    display: flex;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .footer-info-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .site-footer {
+    padding: 40px 16px;
+  }
 }

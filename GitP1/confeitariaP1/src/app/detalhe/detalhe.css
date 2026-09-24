@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Parisienne&family=Poppins:wght@400;500;600&display=swap');
+
+:host {
+  --rosa-claro: #fbe4ea;
+  --rosa-header: #f6c9d3;
+  --vinho: #4a1f2e;
+  --vinho-suave: #7a4356;
+  --dourado: #d9a066;
+  --dourado-escuro: #c2854a;
+  --branco: #ffffff;
+  --borda: #f0dccb;
+
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  color: var(--vinho);
+}
+
+/* Página */
+
+.pagina-detalhe {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px 96px;
+}
+
+.link-voltar {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--vinho-suave);
+  text-decoration: none;
+}
+
+.link-voltar:hover {
+  color: var(--vinho);
+}
+
+/* Não encontrado */
+
+.nao-encontrado {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--rosa-claro);
+  border-radius: 12px;
+}
+
+.nao-encontrado p {
+  font-size: 17px;
+  color: var(--vinho-suave);
+  margin-bottom: 24px;
+}
+
+/* Grid de detalhe */
+
+.detalhe-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .detalhe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detalhe-imagem {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.detalhe-nome {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0 0 16px;
+}
+
+.detalhe-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.preco-riscado {
+  font-size: 15px;
+  color: var(--vinho-suave);
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.preco-atual {
+  color: var(--dourado-escuro);
+  font-weight: 600;
+}
+
+.detalhe-selos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--rosa-claro);
+  color: var(--vinho-suave);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.selo i {
+  color: var(--dourado-escuro);
+}
+
+.detalhe-descritivo {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--vinho-suave);
+  margin-bottom: 20px;
+}
+
+.detalhe-estoque {
+  font-size: 13px;
+  color: var(--vinho-suave);
+  margin-bottom: 24px;
+}
+
+.detalhe-esgotado {
+  color: #b0463f;
+  font-weight: 500;
+}
+
+/* Ações */
+
+.detalhe-acoes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.controle-quantidade {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn-qtd {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--rosa-claro);
+  color: var(--vinho);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.btn-qtd:hover {
+  background: var(--rosa-header);
+}
+
+.quantidade-valor {
+  min-width: 32px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-adicionar {
+  padding: 12px 28px;
+  background: var(--dourado);
+  color: var(--branco);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-adicionar:hover {
+  background: var(--dourado-escuro);
+}
+
+.btn-dourado {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--dourado);
+  color: var(--branco);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-dourado:hover {
+  background: var(--dourado-escuro);
+}

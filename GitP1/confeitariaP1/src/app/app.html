@@ -1,6 +1,15 @@
 <header>
-  <nav>
-    <a class="logo" href="home">Confeitaria da Web</a>
+<nav>
+
+  <button class="menu-toggle" onclick="document.querySelector('.nav-list').classList.toggle('aberto'); this.classList.toggle('ativo')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+    <a class="logo" href="home">
+      <img src="/logo.png" alt="Sweetelier">
+    </a>
     <ul class="nav-list">
       <li>
         <a href="cesta" class="icon-cesta" title="Ver Carrinho">
@@ -48,7 +57,7 @@
           </svg>
         </div>
         <h3>ESCREVA PARA NÓS</h3>
-        <p>confeitari_web&#64;email.com</p>
+        <p>confeitaria_web&#64;email.com</p>
         <p>cw_support&#64;email.com</p>
       </div>
 

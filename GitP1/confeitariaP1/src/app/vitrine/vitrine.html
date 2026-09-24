@@ -1,5 +1,13 @@
 <div class="container my-4">
-  <!-- Pesquisa de Busca -->
+  
+  <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between align-items-center" role="alert" *ngIf="mostrarAviso">
+    <span>Produto adicionado à cesta com sucesso!</span>
+    <div class="d-flex align-items-center">
+      <a routerLink="/cesta" class="btn btn-sm btn-outline-success me-2">Ir à cesta</a>
+      <button type="button" class="btn-close" aria-label="Fechar" (click)="mostrarAviso = false"></button>
+    </div>
+  </div>
+
   <div class="row justify-content-end mb-4">
     
     <div class="col-md-6 text-start">
@@ -27,40 +35,40 @@
     </div>
   </div>
 
-  <!-- Produtos -->
   <div class="row">
     <div class="col-md-3 mb-4" *ngFor="let obj of produtosFiltrados">
-      <div class="card h-100">
-        <!-- Imagem do Produto -->
-        <img [src]="obj.codigo + '.jpg'" class="card-img-top" [alt]="obj.nome">
-        
-        <div class="card-body d-flex flex-column justify-content-between">
-          <!-- Título -->
-          <h5 class="card-title">{{ obj.nome }}</h5>
+      <a [routerLink]="['/detalhe', obj.codigo]" class="card-link">
+        <div class="card h-100">
+
+          <img [src]="obj.codigo + '.jpg'" class="card-img-top" [alt]="obj.nome">
           
-          <!-- Bloco de Preço -->
-          <div class="my-2">
-            <!-- Com Desconto -->
-            <ng-container *ngIf="obj.valorPromo">
-              <span class="text-decoration-line-through me-2">R$ {{ obj.valor }}</span>
-              <span class="text-success">R$ {{ obj.valorPromo }}</span>
-            </ng-container>
+          <div class="card-body d-flex flex-column justify-content-between">
 
-            <!-- Preço Normal -->
-            <ng-container *ngIf="!obj.valorPromo">
-              <span>R$ {{ obj.valor }}</span>
-            </ng-container>
-          </div>
+            <h5 class="card-title">{{ obj.nome }}</h5>
+            
 
-          <!-- Botão Comprar com as suas classes CSS -->
-          <div class="btn-buy">
-            <a href="detalhe" class="btn-buy-btn" type="button">Comprar</a>
+            <div class="my-2">
+
+              <ng-container *ngIf="obj.valorPromo">
+                <span class="text-decoration-line-through me-2">R$ {{ obj.valor }}</span>
+                <span class="text-success">R$ {{ obj.valorPromo }}</span>
+              </ng-container>
+
+
+              <ng-container *ngIf="!obj.valorPromo">
+                <span>R$ {{ obj.valor }}</span>
+              </ng-container>
+            </div>
+
+
+            <div class="btn-buy">
+              <span class="btn-buy-btn">Comprar</span>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
-    <!-- Mensagem de Nenhum Resultado Encontrado -->
     <div class="col-12 text-center my-5" *ngIf="produtosFiltrados.length === 0">
       <p class="text-muted fs-5">Nenhum produto encontrado para "{{ termoPesquisa }}".</p>
     </div>
