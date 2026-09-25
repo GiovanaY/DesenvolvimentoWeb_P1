@@ -6,34 +6,57 @@
   <div class="painel-form">
     <img src="/logo.png" class="logo">
 
-    <h3>Recuperar senha</h3>
+    <!-- Formulário de e-mail -->
+    <ng-container *ngIf="!linkEnviado">
+      <h3>Recuperar senha</h3>
 
-    <p class="instrucao">
-      Informe o e-mail cadastrado e enviaremos um link para você redefinir sua senha.
-    </p>
-
-    <form class="needs-validation" id="formReenvioSenha" novalidate
-          (ngSubmit)="onSubmit(formReenvioSenhaRef)" #formReenvioSenhaRef>
-
-      <label class="form-label" for="txtEmail">E-mail:</label>
-      <div class="input-icon-box">
-        <i class="bi bi-envelope input-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round preview-icon">
-            <path d="M17.925 20.056a6 6 0 0 0-11.851.001"/>
-            <circle cx="12" cy="11" r="4"/>
-            <circle cx="12" cy="12" r="10"/>
-          </svg>
-        </i>
-        <input type="email" id="txtEmail" class="form-control com-icone" required>
-      </div>
-      <div class="invalid-feedback">Coloque seu email!</div>
-
-      <button type="submit" class="btn btn-success w-100">Enviar link</button>
-
-      <p class="lembrei-minha-senha">
-        <a routerLink="/login">Voltar para o login</a>
+      <p class="instrucao">
+        Informe o e-mail cadastrado e enviaremos um link para você redefinir sua senha.
       </p>
 
-    </form>
+      <form class="needs-validation" id="formReenvioSenha" novalidate
+            (ngSubmit)="onSubmit(formReenvioSenhaRef)" #formReenvioSenhaRef>
+
+        <label class="form-label" for="txtEmail">E-mail:</label>
+        <div class="input-icon-box">
+          <i class="bi bi-envelope input-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail preview-icon">
+              <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+            </svg>
+          </i>
+          <input type="email" id="txtEmail" class="form-control com-icone" required>
+        </div>
+        <div class="invalid-feedback">Coloque seu email!</div>
+
+        <button type="submit" class="btn btn-success w-100">Enviar link</button>
+
+        <p class="lembrei-minha-senha">
+          <a routerLink="/login">Voltar para o login</a>
+        </p>
+
+      </form>
+    </ng-container>
+
+    <!-- Tela de confirmação -->
+    <ng-container *ngIf="linkEnviado">
+      <div class="icone-sucesso">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+      </div>
+
+      <h3>Link enviado!</h3>
+
+      <p class="instrucao">
+        Verifique sua caixa de entrada (e a pasta de spam) para redefinir sua senha.
+      </p>
+
+      <button type="button" class="btn btn-success w-100" routerLink="/login">
+        Voltar ao login
+      </button>
+    </ng-container>
+
   </div>
 </div>

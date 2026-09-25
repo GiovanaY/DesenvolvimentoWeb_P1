@@ -88,11 +88,12 @@ html, body {
 }
 
 .painel-form h3 {
-  font-family: "PT Serif Caption", cursive;
+  font-family: 'Playfair Display', serif;
   color: #2b2b2b;
   font-size: 2rem;
   text-align: center;
   margin: 0 0 32px;
+  font-weight: bold;
 }
 
 .input-icon-box {

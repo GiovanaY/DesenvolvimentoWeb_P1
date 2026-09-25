@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [RouterLink, FormsModule],
+  imports: [RouterLink, FormsModule, CommonModule],
   selector: 'app-reenvio-senha',
   styleUrl: './reenvio-senha.css',
   templateUrl: './reenvio-senha.html',
 })
 export class ReenvioSenha {
+  linkEnviado = false;
+
   constructor(private router: Router) {}
 
   onSubmit(form: HTMLFormElement) {
@@ -17,6 +20,6 @@ export class ReenvioSenha {
       return;
     }
 
-    this.router.navigate(['/login']);
+    this.linkEnviado = true;
   }
 }

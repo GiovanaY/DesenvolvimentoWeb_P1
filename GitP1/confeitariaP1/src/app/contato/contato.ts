@@ -17,5 +17,6 @@ export class Contato {
       form.classList.add('was-validated');
       return;
     }
+    window.location.reload();
   }
 }

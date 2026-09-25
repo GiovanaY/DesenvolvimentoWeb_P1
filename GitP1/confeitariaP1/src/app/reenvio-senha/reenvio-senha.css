@@ -88,11 +88,12 @@ html, body {
 }
 
 .painel-form h3 {
-  font-family: "PT Serif Caption", cursive;
+  font-family: 'Playfair Display', serif;
   color: #2b2b2b;
   font-size: 2rem;
   text-align: center;
   margin: 0 0 16px;
+  font-weight: bold;
 }
 
 .painel-form .instrucao {
@@ -203,4 +204,11 @@ html, body {
 
 .lembrei-minha-senha a:hover {
   text-decoration: underline;
+}
+
+.icone-sucesso {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: #4caf50;
 }

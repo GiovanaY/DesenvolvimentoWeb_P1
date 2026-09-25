@@ -107,6 +107,6 @@ export class Cesta {
 
   get frete(): number {
     if (this.total() >= 80) return 0;
-    return 12.00;
+    return 5.00;
   }
 }
