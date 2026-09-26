@@ -1,1 +1,117 @@
-<p>finalizar-compra works!</p>
+<div class="pagina-finalizar-compra">
+  <h1 class="titulo-pagina">Finalizar compra</h1>
+
+  <form class="needs-validation" id="formFinalizarCompra" novalidate
+        (ngSubmit)="onSubmit(formFinalizarRef)" #formFinalizarRef>
+
+    <div class="finalizacao-conteudo">
+
+      <div class="finalizacao-formularios">
+
+        <section class="bloco-form">
+          <h2 class="bloco-titulo">Dados de entrega</h2>
+
+          <label class="form-label" for="txtNomeCompleto">Nome completo:</label>
+          <input type="text" id="txtNomeCompleto" class="form-control" required minlength="5">
+          <div class="invalid-feedback">Escreva seu nome completo!</div>
+
+          <div class="linha-dupla">
+            <div>
+              <label class="form-label" for="txtCep">CEP:</label>
+              <input type="text" id="txtCep" class="form-control" required
+                  pattern="[0-9]{5}-?[0-9]{3}">
+              <div class="invalid-feedback">Informe um CEP válido (ex: 00000-000)</div>
+            </div>
+            <div>
+              <label class="form-label" for="txtCidade">Cidade:</label>
+              <input type="text" id="txtCidade" class="form-control" required>
+              <div class="invalid-feedback">Informe a cidade!</div>
+            </div>
+          </div>
+
+          <label class="form-label" for="txtEndereco">Endereço:</label>
+          <input type="text" id="txtEndereco" class="form-control" required>
+          <div class="invalid-feedback">Informe o endereço!</div>
+
+          <div class="linha-dupla">
+            <div>
+              <label class="form-label" for="txtNumero">Número:</label>
+              <input type="text" id="txtNumero" class="form-control" required>
+              <div class="invalid-feedback">Informe o número!</div>
+            </div>
+            <div>
+              <label class="form-label" for="txtComplemento">Complemento:</label>
+              <input type="text" id="txtComplemento" class="form-control" placeholder="Opcional">
+            </div>
+          </div>
+        </section>
+
+        <section class="bloco-form">
+          <h2 class="bloco-titulo">Forma de pagamento</h2>
+
+          <div class="opcoes-pagamento">
+            <label class="opcao-pagamento">
+              <input type="radio" id="radioPix" name="pagamento" value="pix"
+                  [checked]="metodoPagamento === 'pix'" (change)="metodoPagamento = 'pix'">
+              <span>Pix</span>
+            </label>
+            <label class="opcao-pagamento">
+              <input type="radio" id="radioCartao" name="pagamento" value="cartao"
+                  [checked]="metodoPagamento === 'cartao'" (change)="metodoPagamento = 'cartao'">
+              <span>Cartão de crédito</span>
+            </label>
+            <label class="opcao-pagamento">
+              <input type="radio" id="radioBoleto" name="pagamento" value="boleto"
+                  [checked]="metodoPagamento === 'boleto'" (change)="metodoPagamento = 'boleto'">
+              <span>Boleto</span>
+            </label>
+          </div>
+
+          <div class="campos-cartao" *ngIf="metodoPagamento === 'cartao'">
+            <label class="form-label" for="txtCartaoNumero">Número do cartão:</label>
+            <input type="text" id="txtCartaoNumero" class="form-control" required
+                maxlength="19" pattern="[0-9\s]{16,19}">
+            <div class="invalid-feedback">Informe um número de cartão válido!</div>
+
+            <div class="linha-dupla">
+              <div>
+                <label class="form-label" for="txtCartaoValidade">Validade:</label>
+                <input type="text" id="txtCartaoValidade" class="form-control" required
+                    placeholder="MM/AA" maxlength="5" pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
+                <div class="invalid-feedback">Use o formato MM/AA</div>
+              </div>
+              <div>
+                <label class="form-label" for="txtCartaoCvv">CVV:</label>
+                <input type="text" id="txtCartaoCvv" class="form-control" required
+                    maxlength="4" pattern="[0-9]{3,4}">
+                <div class="invalid-feedback">Informe um CVV válido!</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="resumo-pedido">
+        <h3 class="resumo-titulo">Resumo do pedido</h3>
+
+        <div class="resumo-linha">
+          <span>Subtotal</span>
+          <span>R$ 129,90</span>
+        </div>
+        <div class="resumo-linha">
+          <span>Frete</span>
+          <span class="frete-gratis">Grátis</span>
+        </div>
+        <div class="resumo-linha resumo-total">
+          <span>Total</span>
+          <span>R$ 129,90</span>
+        </div>
+
+        <button type="submit" class="btn-finalizar">Confirmar pedido</button>
+        <a href="cesta" class="link-continuar">Voltar para a cesta</a>
+      </aside>
+
+    </div>
+  </form>
+</div>

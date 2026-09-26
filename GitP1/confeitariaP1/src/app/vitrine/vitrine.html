@@ -1,4 +1,9 @@
-<div class="container my-4">
+<div class="pagina-vitrine">
+  <div class="decoracao decoracao-1"></div>
+  <div class="decoracao decoracao-2"></div>
+  <div class="decoracao decoracao-3"></div>
+
+  <div class="container my-4">
   
   <div class="alert alert-success alert-dismissible fade show d-flex justify-content-between align-items-center" role="alert" *ngIf="mostrarAviso">
     <span>Produto adicionado à cesta com sucesso!</span>
@@ -62,7 +67,9 @@
 
 
             <div class="btn-buy">
-              <span class="btn-buy-btn">Comprar</span>
+              <span class="btn-buy-btn" [class.btn-esgotado]="obj.quantidade === 0">
+                {{ obj.quantidade === 0 ? 'Esgotado' : 'Comprar' }}
+              </span>
             </div>
           </div>
         </div>
@@ -72,5 +79,6 @@
     <div class="col-12 text-center my-5" *ngIf="produtosFiltrados.length === 0">
       <p class="text-muted fs-5">Nenhum produto encontrado para "{{ termoPesquisa }}".</p>
     </div>
+  </div>
   </div>
 </div>

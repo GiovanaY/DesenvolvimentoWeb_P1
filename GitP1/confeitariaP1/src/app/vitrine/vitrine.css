@@ -72,7 +72,7 @@
 .card {
   border: 1px solid #f8e1c6;
   border-radius: 16px;
-  background-color: #ffffff;
+  background-color: #fffefc;
   box-shadow: 0 4px 15px rgba(224, 150, 169, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
@@ -163,4 +163,68 @@
   background-color: #bf945f !important;
   color: #ffffff !important;
   transform: translateY(-2px);
+}
+
+.btn-buy-btn.btn-esgotado {
+  background-color: #b9b4b1 !important;
+  color: #fff !important;
+  cursor: not-allowed;
+}
+
+.pagina-vitrine {
+  position: relative;
+  background-color: #fffdfb;
+  overflow: hidden;
+}
+
+.pagina-vitrine .container {
+  position: relative;
+  z-index: 1;
+}
+
+.decoracao {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.decoracao-1 {
+  width: 600px;
+  height: 600px;
+  top: -140px;
+  left: -120px;
+  background: radial-gradient(circle, #f0b369 10%, transparent 70%);
+  opacity: 0.35;
+}
+
+.decoracao-2 {
+  width: 800px;
+  height: 800px;
+  bottom: -180px;
+  right: -160px;
+  background: radial-gradient(circle, #e2b37b 10%, transparent 70%);
+  opacity: 0.4;
+}
+
+.decoracao-3 {
+  width: 220px;
+  height: 220px;
+  top: 45%;
+  right: 6%;
+  background: radial-gradient(circle, #bf945f 0%, transparent 75%);
+  opacity: 0.18;
+}
+
+@media (max-width: 720px) {
+  .decoracao-1,
+  .decoracao-2 {
+    width: 260px;
+    height: 260px;
+  }
+
+  .decoracao-3 {
+    display: none;
+  }
 }

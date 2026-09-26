@@ -343,3 +343,99 @@
   display: block;
   margin-top: 2px;
 }
+
+/* ===== Responsivo - Celular ===== */
+@media (max-width: 720px) {
+
+  /* Primeira Seção */
+  .banner-section {
+    height: auto;
+    min-height: unset;
+  }
+
+  .conteudo-container {
+    flex-direction: column;
+  }
+
+  .conteudo {
+    padding: 32px 6%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .conteudo h1 {
+    font-size: 26px;
+  }
+
+  .btn-vitrine {
+    align-self: center;
+  }
+
+  .imagem-lado {
+    min-height: 220px;
+  }
+
+  /* Layout compartilhado */
+  .section-titulo {
+    font-size: 1.8rem;
+  }
+
+  .section-descricao {
+    margin-bottom: 40px;
+  }
+
+  /* Segunda Seção */
+  .features-layout {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .features-col {
+    gap: 30px;
+    width: 100%;
+  }
+
+  .img-redonda {
+    order: -1;
+  }
+
+  .img-centro {
+    width: 220px;
+    height: 220px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+
+  /* Terceira Seção */
+  .banner-desconto h2 {
+    font-size: 26px;
+  }
+
+  .botoes-grupo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  /* Quarta Seção */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    padding: 30px 20px;
+  }
+}
