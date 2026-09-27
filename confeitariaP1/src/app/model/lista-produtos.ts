@@ -108,6 +108,41 @@ export const PRODUTOS: Produto[] = [
     quantidade: 14,
     destaque: 1,
     semLactose: true
+  },
+  {
+    codigo: 13,
+    nome: 'Fatia de Bolo Chantilly com Morango',
+    descritivo: 'Camadas fofinhas de pão de ló intercaladas com chantilly aveludado e morangos frescos, finalizada com raspas crocantes e um morango no topo.',
+    valor: 25.90,
+    valorPromo: 23.00,
+    quantidade: 14,
+    destaque: 1,
+    semGluten: true
+  },
+  {
+  codigo: 14,
+  nome: 'Bolo de Chocolate Belga com Trufas e Morango',
+  descritivo: 'Bolo de chocolate com cobertura de ganache espelhada, decorado com trufas de chocolate crocante, morangos frescos e raspas de chocolate meio amargo.',
+  valor: 119.90,
+  quantidade: 5,
+  destaque: 1
+  },
+  {
+  codigo: 15,
+  nome: 'Mini Bolo Mousse de Baunilha com Framboesa',
+  descritivo: 'Base crocante de biscoito com recheio de coulis de framboesa, coberto por uma mousse aveludada de baunilha e finalizado com chantilly e framboesas frescas.',
+  valor: 27.90,
+  quantidade: 8,
+  destaque: 1,
+  semGluten: false
+  },
+  {
+  codigo: 16,
+  nome: 'Bolo Rosca de Especiarias com Glacê e Castanhas',
+  descritivo: 'Bolo individual em formato de rosca, macio e aromático, coberto com um glacê branco cremoso e finalizado com castanhas e amêndoas caramelizadas crocantes.',
+  valor: 26.50,
+  quantidade: 12,
+  destaque: 1
   }
 ];
 
